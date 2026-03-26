@@ -13,10 +13,12 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 collection = db.collection("users")
 
+CORS(app, resources={r"/*": {"origins": "*"}})
+
 # UI Route
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return "Firebase Database Connection is Ready"
 
 # CREATE
 @app.route("/add", methods=["POST"])
