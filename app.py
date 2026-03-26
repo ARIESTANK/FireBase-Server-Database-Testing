@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # Firebase init
 # Load from env
-firebase_key = os.environ.get("keys")
+firebase_key = os.environ.get("FIREBASE_KEY")
 
 # Convert string → dict
 firebase_dict = json.loads(firebase_key)
